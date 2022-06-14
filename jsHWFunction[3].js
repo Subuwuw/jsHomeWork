@@ -1,13 +1,12 @@
-/**                                             * 2*:
-                    Преобразовать задание 1* таким образом, чтобы первым делом
-             в функции проверялся тип данных. И если он не Number - кидалась ошибка. 
+/**                                        3**:
+Преобразовать 2* таким образом, чтобы значение '2' (строка в которой лежит ТОЛЬКО ЦИФРА) пропускалось, преобразовываясь в number
  */
 let age_2 = 18;
 let age_3 = 60;
 
 function checkAge(age) {
   let strToNum = Number(age);
-  if (typeof strToNum == "number") {
+  if (!isNaN(strToNum)) {
     if (strToNum < age_2) {
       return (
         "You don’t have access cause your age is " +
@@ -22,7 +21,7 @@ function checkAge(age) {
       return "Technical work";
     }
   } else {
-    return "Вы ввели не число а << " + strToNum + " >>";
+    return "Вы ввели не число а << " + age + " >>";
   }
 }
 console.log(checkAge(17));
