@@ -1,13 +1,12 @@
-/**                                             * 2*:
-                    Преобразовать задание 1* таким образом, чтобы первым делом
-             в функции проверялся тип данных. И если он не Number - кидалась ошибка. 
+/**                                            4***:
+Преобразовать задание 3* таким образом, чтобы возраст вводится используя функцию prompt в привязанной верстке
  */
 let age_2 = 18;
 let age_3 = 60;
 let age = prompt("Введите Ваш возраст");
 function checkAge(age) {
   let strToNum = Number(age);
-  if (typeof strToNum == "number") {
+  if (!isNaN(strToNum)) {
     if (strToNum < age_2) {
       return (
         "You don’t have access cause your age is " +
@@ -22,7 +21,7 @@ function checkAge(age) {
       return "Technical work";
     }
   } else {
-    return "Вы ввели не число а << " + strToNum + " >>";
+    return "Вы ввели не число а << " + age + " >>";
   }
 }
 let resCheck = String(checkAge(age));
