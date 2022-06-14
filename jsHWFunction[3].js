@@ -5,9 +5,9 @@ let age_2 = 18;
 let age_3 = 60;
 
 function checkAge(age) {
-  let strToNum = Number(age);
+  let strToNum = Number("" + age);
   if (!isNaN(strToNum)) {
-    if (strToNum < age_2) {
+    if (strToNum < age_2 && strToNum > 0) {
       return (
         "You don’t have access cause your age is " +
         strToNum +
@@ -18,14 +18,16 @@ function checkAge(age) {
     } else if (strToNum > age_3) {
       return "Keep calm and look Culture channel, u are " + strToNum;
     } else {
-      return "Technical work";
+      return "Вы ввели не число а '' " + age + " ''";
     }
   } else {
-    return "Вы ввели не число а << " + age + " >>";
+    return "Вы ввели не число а '' " + age + " '' ";
   }
 }
 console.log(checkAge(17));
-console.log(checkAge(18));
-console.log(checkAge(61));
-console.log(checkAge("3213"));
+console.log(checkAge(19));
+console.log(checkAge(-17));
+console.log(checkAge(""));
+console.log(checkAge(false));
+console.log(checkAge(true));
 console.log(checkAge("я тут ввёл строку случайно))000"));
