@@ -5,7 +5,7 @@ let age_2 = 18;
 let age_3 = 60;
 let age = prompt("Введите Ваш возраст");
 function checkAge(age) {
-  let strToNum = Number(age);
+  let strToNum = Number("" + age);
   if (!isNaN(strToNum)) {
     if (strToNum < age_2) {
       return (
@@ -24,6 +24,7 @@ function checkAge(age) {
     return "Вы ввели не число а << " + age + " >>";
   }
 }
+
 let resCheck = String(checkAge(age));
 document.getElementById("result").innerHTML = resCheck;
 console.log(resCheck);
